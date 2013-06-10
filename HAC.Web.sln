@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HAC.Web", "HAC.Web\HAC.Web.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HAC.Domain", "HAC.Domain\HAC.Domain.csproj", "{2E5BB017-259F-4BBB-8AD7-61DD0247B358}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "HAC.Database", "HAC.Database\HAC.Database.sqlproj", "{07A814E3-05C7-478C-89C3-F333560AE151}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,12 @@ Global
 		{2E5BB017-259F-4BBB-8AD7-61DD0247B358}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E5BB017-259F-4BBB-8AD7-61DD0247B358}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E5BB017-259F-4BBB-8AD7-61DD0247B358}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07A814E3-05C7-478C-89C3-F333560AE151}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A814E3-05C7-478C-89C3-F333560AE151}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A814E3-05C7-478C-89C3-F333560AE151}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{07A814E3-05C7-478C-89C3-F333560AE151}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A814E3-05C7-478C-89C3-F333560AE151}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07A814E3-05C7-478C-89C3-F333560AE151}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

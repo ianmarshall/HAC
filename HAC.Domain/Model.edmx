@@ -1,0 +1,1695 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HAC2Model.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="HAC2ModelStoreContainer">
+          <EntitySet Name="Applications" EntityType="HAC2Model.Store.Applications" store:Type="Tables" store:Name="Applications">
+            <DefiningQuery>SELECT 
+            [Applications].[ApplicationName] AS [ApplicationName], 
+            [Applications].[ApplicationId] AS [ApplicationId], 
+            [Applications].[Description] AS [Description]
+            FROM [Applications] AS [Applications]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Entries" EntityType="HAC2Model.Store.Entries" store:Type="Tables" store:Name="Entries">
+            <DefiningQuery>SELECT 
+            [Entries].[EntryId] AS [EntryId], 
+            [Entries].[Race] AS [Race], 
+            [Entries].[First_Name] AS [First_Name], 
+            [Entries].[Last_Name] AS [Last_Name], 
+            [Entries].[Address_Line1] AS [Address_Line1], 
+            [Entries].[Address_Line2] AS [Address_Line2], 
+            [Entries].[CityTown] AS [CityTown], 
+            [Entries].[County] AS [County], 
+            [Entries].[Phone] AS [Phone], 
+            [Entries].[Email] AS [Email]
+            FROM [Entries] AS [Entries]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Events" EntityType="HAC2Model.Store.Events" store:Type="Tables" store:Name="Events">
+            <DefiningQuery>SELECT 
+            [Events].[ID] AS [ID], 
+            [Events].[Title] AS [Title], 
+            [Events].[subject] AS [subject], 
+            [Events].[Day] AS [Day], 
+            [Events].[Month] AS [Month], 
+            [Events].[Year] AS [Year], 
+            [Events].[Date] AS [Date], 
+            [Events].[EndDate] AS [EndDate], 
+            [Events].[Location] AS [Location], 
+            [Events].[Description] AS [Description], 
+            [Events].[URL] AS [URL], 
+            [Events].[show_news] AS [show_news], 
+            [Events].[news1] AS [news1], 
+            [Events].[news2] AS [news2], 
+            [Events].[resultid] AS [resultid], 
+            [Events].[photo] AS [photo], 
+            [Events].[ImgS] AS [ImgS], 
+            [Events].[ImgB] AS [ImgB], 
+            [Events].[name] AS [name], 
+            [Events].[lname] AS [lname], 
+            [Events].[mid] AS [mid], 
+            [Events].[show_results] AS [show_results], 
+            [Events].[udate] AS [udate]
+            FROM [Events] AS [Events]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="funrun" EntityType="HAC2Model.Store.funrun" store:Type="Tables" store:Name="funrun">
+            <DefiningQuery>SELECT 
+            [funrun].[address1] AS [address1], 
+            [funrun].[address2] AS [address2], 
+            [funrun].[address3] AS [address3], 
+            [funrun].[aff] AS [aff], 
+            [funrun].[age] AS [age], 
+            [funrun].[club] AS [club], 
+            [funrun].[county] AS [county], 
+            [funrun].[dec] AS [dec], 
+            [funrun].[dob] AS [dob], 
+            [funrun].[email] AS [email], 
+            [funrun].[fee] AS [fee], 
+            [funrun].[form] AS [form], 
+            [funrun].[grade] AS [grade], 
+            [funrun].[Id] AS [Id], 
+            [funrun].[lname] AS [lname], 
+            [funrun].[mobile] AS [mobile], 
+            [funrun].[name] AS [name], 
+            [funrun].[newsletter] AS [newsletter], 
+            [funrun].[number] AS [number], 
+            [funrun].[number1] AS [number1], 
+            [funrun].[paid] AS [paid], 
+            [funrun].[phone] AS [phone], 
+            [funrun].[postcode] AS [postcode], 
+            [funrun].[prn] AS [prn], 
+            [funrun].[race] AS [race], 
+            [funrun].[receipt] AS [receipt], 
+            [funrun].[rn] AS [rn], 
+            [funrun].[sent] AS [sent], 
+            [funrun].[sex] AS [sex], 
+            [funrun].[title] AS [title], 
+            [funrun].[udate] AS [udate], 
+            [funrun].[gp] AS [gp], 
+            [funrun].[date] AS [date], 
+            [funrun].[message] AS [message], 
+            [funrun].[transaction_id] AS [transaction_id], 
+            [funrun].[rn2] AS [rn2], 
+            [funrun].[ukaNumber] AS [ukaNumber], 
+            [funrun].[IpnDetails] AS [IpnDetails]
+            FROM [funrun] AS [funrun]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="info" EntityType="HAC2Model.Store.info" store:Type="Tables" store:Name="info">
+            <DefiningQuery>SELECT 
+            [info].[ID] AS [ID], 
+            [info].[info] AS [info], 
+            [info].[date] AS [date], 
+            [info].[name] AS [name], 
+            [info].[udate] AS [udate], 
+            [info].[extra] AS [extra], 
+            [info].[upsize_ts] AS [upsize_ts]
+            FROM [info] AS [info]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="info2" EntityType="HAC2Model.Store.info2" store:Type="Tables" store:Name="info2">
+            <DefiningQuery>SELECT 
+            [info2].[ID] AS [ID], 
+            [info2].[info] AS [info], 
+            [info2].[date] AS [date], 
+            [info2].[name] AS [name], 
+            [info2].[udate] AS [udate], 
+            [info2].[extra] AS [extra], 
+            [info2].[upsize_ts] AS [upsize_ts]
+            FROM [info2] AS [info2]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="links" EntityType="HAC2Model.Store.links" store:Type="Tables" store:Name="links">
+            <DefiningQuery>SELECT 
+            [links].[Id] AS [Id], 
+            [links].[category] AS [category], 
+            [links].[url] AS [url], 
+            [links].[title] AS [title], 
+            [links].[description] AS [description], 
+            [links].[image] AS [image], 
+            [links].[mid] AS [mid], 
+            [links].[name] AS [name], 
+            [links].[lname] AS [lname], 
+            [links].[udate] AS [udate], 
+            [links].[photo] AS [photo], 
+            [links].[upsize_ts] AS [upsize_ts]
+            FROM [links] AS [links]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Members" EntityType="HAC2Model.Store.Members" store:Type="Tables" store:Name="Members">
+            <DefiningQuery>SELECT 
+            [Members].[Id] AS [Id], 
+            [Members].[ForeName] AS [ForeName], 
+            [Members].[SurName] AS [SurName], 
+            [Members].[Email] AS [Email], 
+            [Members].[Phone] AS [Phone], 
+            [Members].[Password] AS [Password], 
+            [Members].[DOB] AS [DOB], 
+            [Members].[Sex] AS [Sex], 
+            [Members].[Access] AS [Access], 
+            [Members].[OldId] AS [OldId], 
+            [Members].[MembershipType] AS [MembershipType], 
+            [Members].[MembershipId] AS [MembershipId]
+            FROM [Members] AS [Members]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="membership" EntityType="HAC2Model.Store.membership" store:Type="Tables" store:Name="membership">
+            <DefiningQuery>SELECT 
+            [membership].[ID] AS [ID], 
+            [membership].[lname] AS [lname], 
+            [membership].[name] AS [name], 
+            [membership].[sex] AS [sex], 
+            [membership].[dob] AS [dob], 
+            [membership].[type] AS [type], 
+            [membership].[mid] AS [mid], 
+            [membership].[access] AS [access], 
+            [membership].[ex1] AS [ex1], 
+            [membership].[udate] AS [udate], 
+            [membership].[renew] AS [renew], 
+            [membership].[email] AS [email], 
+            [membership].[phone] AS [phone], 
+            [membership].[address1] AS [address1], 
+            [membership].[address2] AS [address2], 
+            [membership].[town] AS [town], 
+            [membership].[postcode] AS [postcode]
+            FROM [membership] AS [membership]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Memberships" EntityType="HAC2Model.Store.Memberships" store:Type="Tables" store:Name="Memberships">
+            <DefiningQuery>SELECT 
+            [Memberships].[ApplicationId] AS [ApplicationId], 
+            [Memberships].[UserId] AS [UserId], 
+            [Memberships].[Password] AS [Password], 
+            [Memberships].[PasswordFormat] AS [PasswordFormat], 
+            [Memberships].[PasswordSalt] AS [PasswordSalt], 
+            [Memberships].[Email] AS [Email], 
+            [Memberships].[PasswordQuestion] AS [PasswordQuestion], 
+            [Memberships].[PasswordAnswer] AS [PasswordAnswer], 
+            [Memberships].[IsApproved] AS [IsApproved], 
+            [Memberships].[IsLockedOut] AS [IsLockedOut], 
+            [Memberships].[CreateDate] AS [CreateDate], 
+            [Memberships].[LastLoginDate] AS [LastLoginDate], 
+            [Memberships].[LastPasswordChangedDate] AS [LastPasswordChangedDate], 
+            [Memberships].[LastLockoutDate] AS [LastLockoutDate], 
+            [Memberships].[FailedPasswordAttemptCount] AS [FailedPasswordAttemptCount], 
+            [Memberships].[FailedPasswordAttemptWindowStart] AS [FailedPasswordAttemptWindowStart], 
+            [Memberships].[FailedPasswordAnswerAttemptCount] AS [FailedPasswordAnswerAttemptCount], 
+            [Memberships].[FailedPasswordAnswerAttemptWindowsStart] AS [FailedPasswordAnswerAttemptWindowsStart], 
+            [Memberships].[Comment] AS [Comment]
+            FROM [Memberships] AS [Memberships]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PIC_CATEGORIES" EntityType="HAC2Model.Store.PIC_CATEGORIES" store:Type="Tables" store:Name="PIC_CATEGORIES">
+            <DefiningQuery>SELECT 
+            [PIC_CATEGORIES].[CAT_ID] AS [CAT_ID], 
+            [PIC_CATEGORIES].[CAT_NAME] AS [CAT_NAME], 
+            [PIC_CATEGORIES].[CAT_IMAGE] AS [CAT_IMAGE], 
+            [PIC_CATEGORIES].[CAT_DESC] AS [CAT_DESC]
+            FROM [PIC_CATEGORIES] AS [PIC_CATEGORIES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="profile" EntityType="HAC2Model.Store.profile" store:Type="Tables" store:Name="profile">
+            <DefiningQuery>SELECT 
+            [profile].[Id] AS [Id], 
+            [profile].[mid] AS [mid], 
+            [profile].[type] AS [type], 
+            [profile].[membership] AS [membership], 
+            [profile].[gender] AS [gender], 
+            [profile].[name] AS [name], 
+            [profile].[lname] AS [lname], 
+            [profile].[dob] AS [dob], 
+            [profile].[Email] AS [Email], 
+            [profile].[subject] AS [subject], 
+            [profile].[username] AS [username], 
+            [profile].[password] AS [password], 
+            [profile].[udate] AS [udate], 
+            [profile].[best] AS [best], 
+            [profile].[ambitions] AS [ambitions], 
+            [profile].[latest] AS [latest], 
+            [profile].[tip] AS [tip], 
+            [profile].[position] AS [position], 
+            [profile].[standard] AS [standard], 
+            [profile].[qualifications] AS [qualifications], 
+            [profile].[specialisation] AS [specialisation], 
+            [profile].[posts_held] AS [posts_held], 
+            [profile].[current_athletes] AS [current_athletes], 
+            [profile].[athletes_achievements] AS [athletes_achievements], 
+            [profile].[age_group] AS [age_group], 
+            [profile].[photo] AS [photo], 
+            [profile].[pb] AS [pb], 
+            [profile].[result] AS [result], 
+            [profile].[pb1] AS [pb1], 
+            [profile].[pb2] AS [pb2], 
+            [profile].[weeman] AS [weeman], 
+            [profile].[more] AS [more], 
+            [profile].[more2] AS [more2]
+            FROM [profile] AS [profile]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Profiles" EntityType="HAC2Model.Store.Profiles" store:Type="Tables" store:Name="Profiles">
+            <DefiningQuery>SELECT 
+            [Profiles].[UserId] AS [UserId], 
+            [Profiles].[PropertyNames] AS [PropertyNames], 
+            [Profiles].[PropertyValueStrings] AS [PropertyValueStrings], 
+            [Profiles].[PropertyValueBinary] AS [PropertyValueBinary], 
+            [Profiles].[LastUpdatedDate] AS [LastUpdatedDate]
+            FROM [Profiles] AS [Profiles]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="results" EntityType="HAC2Model.Store.results" store:Type="Tables" store:Name="results">
+            <DefiningQuery>SELECT 
+            [results].[Id] AS [Id], 
+            [results].[EventId] AS [EventId], 
+            [results].[mid] AS [mid], 
+            [results].[name] AS [name], 
+            [results].[lname] AS [lname], 
+            [results].[date] AS [date], 
+            [results].[day] AS [day], 
+            [results].[month] AS [month], 
+            [results].[year] AS [year], 
+            [results].[Title] AS [Title], 
+            [results].[Location] AS [Location], 
+            [results].[gender] AS [gender], 
+            [results].[agecat] AS [agecat], 
+            [results].[subject] AS [subject], 
+            [results].[section] AS [section], 
+            [results].[position] AS [position], 
+            [results].[result] AS [result], 
+            [results].[dp2] AS [dp2], 
+            [results].[d1] AS [d1], 
+            [results].[d2] AS [d2], 
+            [results].[d3] AS [d3], 
+            [results].[d4] AS [d4], 
+            [results].[d5] AS [d5], 
+            [results].[comment] AS [comment], 
+            [results].[url] AS [url], 
+            [results].[url2] AS [url2], 
+            [results].[udate] AS [udate], 
+            [results].[extra1] AS [extra1], 
+            [results].[extra2] AS [extra2], 
+            [results].[extra3] AS [extra3], 
+            [results].[total] AS [total], 
+            [results].[percent] AS [percent], 
+            [results].[points] AS [points], 
+            [results].[upsize_ts] AS [upsize_ts]
+            FROM [results] AS [results]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Roles" EntityType="HAC2Model.Store.Roles" store:Type="Tables" store:Name="Roles">
+            <DefiningQuery>SELECT 
+            [Roles].[ApplicationId] AS [ApplicationId], 
+            [Roles].[RoleId] AS [RoleId], 
+            [Roles].[RoleName] AS [RoleName], 
+            [Roles].[Description] AS [Description]
+            FROM [Roles] AS [Roles]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="sysdiagrams" EntityType="HAC2Model.Store.sysdiagrams" store:Type="Tables" store:Name="sysdiagrams">
+            <DefiningQuery>SELECT 
+            [sysdiagrams].[name] AS [name], 
+            [sysdiagrams].[principal_id] AS [principal_id], 
+            [sysdiagrams].[diagram_id] AS [diagram_id], 
+            [sysdiagrams].[version] AS [version], 
+            [sysdiagrams].[definition] AS [definition]
+            FROM [sysdiagrams] AS [sysdiagrams]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="tenk2012" EntityType="HAC2Model.Store.tenk2012" store:Type="Tables" store:Name="tenk2012">
+            <DefiningQuery>SELECT 
+            [tenk2012].[address1] AS [address1], 
+            [tenk2012].[address2] AS [address2], 
+            [tenk2012].[address3] AS [address3], 
+            [tenk2012].[aff] AS [aff], 
+            [tenk2012].[age] AS [age], 
+            [tenk2012].[club] AS [club], 
+            [tenk2012].[county] AS [county], 
+            [tenk2012].[dec] AS [dec], 
+            [tenk2012].[dob] AS [dob], 
+            [tenk2012].[email] AS [email], 
+            [tenk2012].[fee] AS [fee], 
+            [tenk2012].[form] AS [form], 
+            [tenk2012].[grade] AS [grade], 
+            [tenk2012].[Id] AS [Id], 
+            [tenk2012].[lname] AS [lname], 
+            [tenk2012].[mobile] AS [mobile], 
+            [tenk2012].[name] AS [name], 
+            [tenk2012].[newsletter] AS [newsletter], 
+            [tenk2012].[number] AS [number], 
+            [tenk2012].[number1] AS [number1], 
+            [tenk2012].[paid] AS [paid], 
+            [tenk2012].[phone] AS [phone], 
+            [tenk2012].[postcode] AS [postcode], 
+            [tenk2012].[prn] AS [prn], 
+            [tenk2012].[race] AS [race], 
+            [tenk2012].[receipt] AS [receipt], 
+            [tenk2012].[rn] AS [rn], 
+            [tenk2012].[sent] AS [sent], 
+            [tenk2012].[sex] AS [sex], 
+            [tenk2012].[title] AS [title], 
+            [tenk2012].[udate] AS [udate], 
+            [tenk2012].[gp] AS [gp], 
+            [tenk2012].[date] AS [date], 
+            [tenk2012].[message] AS [message], 
+            [tenk2012].[transaction_id] AS [transaction_id], 
+            [tenk2012].[rn2] AS [rn2], 
+            [tenk2012].[ukaNumber] AS [ukaNumber], 
+            [tenk2012].[IpnDetails] AS [IpnDetails]
+            FROM [tenk2012] AS [tenk2012]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Users" EntityType="HAC2Model.Store.Users" store:Type="Tables" store:Name="Users">
+            <DefiningQuery>SELECT 
+            [Users].[ApplicationId] AS [ApplicationId], 
+            [Users].[UserId] AS [UserId], 
+            [Users].[UserName] AS [UserName], 
+            [Users].[IsAnonymous] AS [IsAnonymous], 
+            [Users].[LastActivityDate] AS [LastActivityDate]
+            FROM [Users] AS [Users]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="UsersInRoles" EntityType="HAC2Model.Store.UsersInRoles" store:Type="Tables" store:Name="UsersInRoles">
+            <DefiningQuery>SELECT 
+            [UsersInRoles].[UserId] AS [UserId], 
+            [UsersInRoles].[RoleId] AS [RoleId]
+            FROM [UsersInRoles] AS [UsersInRoles]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'Applications' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="Applications">
+          <Key>
+            <PropertyRef Name="ApplicationName" />
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationName" Type="nvarchar" Nullable="false" MaxLength="235" />
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'Entries' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="Entries">
+          <Key>
+            <PropertyRef Name="EntryId" />
+            <PropertyRef Name="Race" />
+            <PropertyRef Name="First_Name" />
+            <PropertyRef Name="Last_Name" />
+            <PropertyRef Name="Address_Line1" />
+            <PropertyRef Name="Address_Line2" />
+            <PropertyRef Name="CityTown" />
+            <PropertyRef Name="County" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="EntryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Race" Type="bit" Nullable="false" />
+          <Property Name="First_Name" Type="ntext" Nullable="false" />
+          <Property Name="Last_Name" Type="ntext" Nullable="false" />
+          <Property Name="Address_Line1" Type="ntext" Nullable="false" />
+          <Property Name="Address_Line2" Type="ntext" Nullable="false" />
+          <Property Name="CityTown" Type="ntext" Nullable="false" />
+          <Property Name="County" Type="ntext" Nullable="false" />
+          <Property Name="Phone" Type="ntext" Nullable="false" />
+          <Property Name="Email" Type="ntext" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'Events' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="subject" Type="nvarchar" MaxLength="50" />
+          <Property Name="Day" Type="int" />
+          <Property Name="Month" Type="nvarchar" MaxLength="50" />
+          <Property Name="Year" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="Location" Type="nvarchar" MaxLength="75" />
+          <Property Name="Description" Type="ntext" />
+          <Property Name="URL" Type="nvarchar" MaxLength="150" />
+          <Property Name="show_news" Type="nvarchar" MaxLength="80" />
+          <Property Name="news1" Type="ntext" />
+          <Property Name="news2" Type="ntext" />
+          <Property Name="resultid" Type="int" />
+          <Property Name="photo" Type="image" />
+          <Property Name="ImgS" Type="nvarchar" MaxLength="150" />
+          <Property Name="ImgB" Type="nvarchar" MaxLength="150" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="mid" Type="int" />
+          <Property Name="show_results" Type="nvarchar" MaxLength="50" />
+          <Property Name="udate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'funrun' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="funrun">
+          <Key>
+            <PropertyRef Name="address1" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="address1" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="address3" Type="nvarchar" MaxLength="50" />
+          <Property Name="aff" Type="nvarchar" MaxLength="50" />
+          <Property Name="age" Type="int" />
+          <Property Name="club" Type="nvarchar" MaxLength="50" />
+          <Property Name="county" Type="nvarchar" MaxLength="50" />
+          <Property Name="dec" Type="nvarchar" MaxLength="50" />
+          <Property Name="dob" Type="datetime" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="fee" Type="int" />
+          <Property Name="form" Type="nvarchar" MaxLength="50" />
+          <Property Name="grade" Type="nvarchar" MaxLength="50" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="newsletter" Type="nvarchar" MaxLength="50" />
+          <Property Name="number" Type="int" />
+          <Property Name="number1" Type="int" />
+          <Property Name="paid" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="postcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="prn" Type="int" />
+          <Property Name="race" Type="nvarchar" MaxLength="50" />
+          <Property Name="receipt" Type="nvarchar" MaxLength="50" />
+          <Property Name="rn" Type="int" />
+          <Property Name="sent" Type="nvarchar" MaxLength="50" />
+          <Property Name="sex" Type="nvarchar" MaxLength="50" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" />
+          <Property Name="udate" Type="datetime" />
+          <Property Name="gp" Type="nchar" MaxLength="10" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="message" Type="nchar" MaxLength="10" />
+          <Property Name="transaction_id" Type="nvarchar" MaxLength="30" />
+          <Property Name="rn2" Type="uniqueidentifier" />
+          <Property Name="ukaNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="IpnDetails" Type="ntext" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'info' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="info">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="info" Type="ntext" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="udate" Type="datetime" />
+          <Property Name="extra" Type="ntext" />
+          <Property Name="upsize_ts" Type="rowversion" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'info2' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="info2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="info" Type="ntext" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="udate" Type="datetime" />
+          <Property Name="extra" Type="ntext" />
+          <Property Name="upsize_ts" Type="rowversion" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'links' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="links">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="category" Type="nvarchar" MaxLength="50" />
+          <Property Name="url" Type="nvarchar" MaxLength="255" />
+          <Property Name="title" Type="nvarchar" MaxLength="100" />
+          <Property Name="description" Type="nvarchar" MaxLength="220" />
+          <Property Name="image" Type="image" />
+          <Property Name="mid" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="udate" Type="datetime" />
+          <Property Name="photo" Type="image" />
+          <Property Name="upsize_ts" Type="rowversion" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'Members' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="Members">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ForeName" />
+            <PropertyRef Name="SurName" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ForeName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="SurName" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="255" />
+          <Property Name="Password" Type="nvarchar" MaxLength="255" />
+          <Property Name="DOB" Type="datetime" />
+          <Property Name="Sex" Type="nvarchar" MaxLength="255" />
+          <Property Name="Access" Type="nvarchar" MaxLength="255" />
+          <Property Name="OldId" Type="int" />
+          <Property Name="MembershipType" Type="nvarchar" MaxLength="255" />
+          <Property Name="MembershipId" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'membership' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="membership">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lname" Type="nvarchar" MaxLength="255" />
+          <Property Name="name" Type="nvarchar" MaxLength="255" />
+          <Property Name="sex" Type="nvarchar" MaxLength="50" />
+          <Property Name="dob" Type="nvarchar" MaxLength="50" />
+          <Property Name="type" Type="nvarchar" MaxLength="255" />
+          <Property Name="mid" Type="int" />
+          <Property Name="access" Type="nvarchar" MaxLength="50" />
+          <Property Name="ex1" Type="int" />
+          <Property Name="udate" Type="datetime" />
+          <Property Name="renew" Type="datetime" />
+          <Property Name="email" Type="nvarchar" MaxLength="80" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="address1" Type="nvarchar" MaxLength="50" />
+          <Property Name="address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="town" Type="nvarchar" MaxLength="50" />
+          <Property Name="postcode" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'Memberships' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="Memberships">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="PasswordFormat" />
+            <PropertyRef Name="PasswordSalt" />
+            <PropertyRef Name="IsApproved" />
+            <PropertyRef Name="IsLockedOut" />
+            <PropertyRef Name="CreateDate" />
+            <PropertyRef Name="LastLoginDate" />
+            <PropertyRef Name="LastPasswordChangedDate" />
+            <PropertyRef Name="LastLockoutDate" />
+            <PropertyRef Name="FailedPasswordAttemptCount" />
+            <PropertyRef Name="FailedPasswordAttemptWindowStart" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptCount" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptWindowsStart" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="PasswordSalt" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'PIC_CATEGORIES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="PIC_CATEGORIES">
+          <Key>
+            <PropertyRef Name="CAT_ID" />
+          </Key>
+          <Property Name="CAT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CAT_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="CAT_IMAGE" Type="nvarchar" MaxLength="50" />
+          <Property Name="CAT_DESC" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'profile' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="profile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="mid" Type="int" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" />
+          <Property Name="membership" Type="nvarchar" MaxLength="50" />
+          <Property Name="gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="dob" Type="datetime" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="subject" Type="nvarchar" MaxLength="50" />
+          <Property Name="username" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="udate" Type="datetime" />
+          <Property Name="best" Type="ntext" />
+          <Property Name="ambitions" Type="ntext" />
+          <Property Name="latest" Type="ntext" />
+          <Property Name="tip" Type="ntext" />
+          <Property Name="position" Type="ntext" />
+          <Property Name="standard" Type="ntext" />
+          <Property Name="qualifications" Type="ntext" />
+          <Property Name="specialisation" Type="ntext" />
+          <Property Name="posts_held" Type="ntext" />
+          <Property Name="current_athletes" Type="ntext" />
+          <Property Name="athletes_achievements" Type="ntext" />
+          <Property Name="age_group" Type="nvarchar" MaxLength="50" />
+          <Property Name="photo" Type="image" />
+          <Property Name="pb" Type="int" />
+          <Property Name="result" Type="int" />
+          <Property Name="pb1" Type="nvarchar" MaxLength="150" />
+          <Property Name="pb2" Type="ntext" />
+          <Property Name="weeman" Type="image" />
+          <Property Name="more" Type="bit" />
+          <Property Name="more2" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'Profiles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="Profiles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PropertyNames" />
+            <PropertyRef Name="PropertyValueStrings" />
+            <PropertyRef Name="PropertyValueBinary" />
+            <PropertyRef Name="LastUpdatedDate" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PropertyNames" Type="nvarchar" Nullable="false" />
+          <Property Name="PropertyValueStrings" Type="nvarchar" Nullable="false" />
+          <Property Name="PropertyValueBinary" Type="image" Nullable="false" />
+          <Property Name="LastUpdatedDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'results' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="results">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EventId" Type="nvarchar" MaxLength="50" />
+          <Property Name="mid" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="day" Type="datetime" />
+          <Property Name="month" Type="datetime" />
+          <Property Name="year" Type="int" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Location" Type="nvarchar" MaxLength="100" />
+          <Property Name="gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="agecat" Type="nvarchar" MaxLength="50" />
+          <Property Name="subject" Type="nvarchar" MaxLength="50" />
+          <Property Name="section" Type="nvarchar" MaxLength="50" />
+          <Property Name="position" Type="int" />
+          <Property Name="result" Type="float" />
+          <Property Name="dp2" Type="float" />
+          <Property Name="d1" Type="int" />
+          <Property Name="d2" Type="int" />
+          <Property Name="d3" Type="int" />
+          <Property Name="d4" Type="int" />
+          <Property Name="d5" Type="int" />
+          <Property Name="comment" Type="nvarchar" MaxLength="150" />
+          <Property Name="url" Type="ntext" />
+          <Property Name="url2" Type="nvarchar" MaxLength="50" />
+          <Property Name="udate" Type="datetime" />
+          <Property Name="extra1" Type="nvarchar" MaxLength="100" />
+          <Property Name="extra2" Type="ntext" />
+          <Property Name="extra3" Type="int" />
+          <Property Name="total" Type="float" />
+          <Property Name="percent" Type="float" />
+          <Property Name="points" Type="int" />
+          <Property Name="upsize_ts" Type="rowversion" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'Roles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="RoleName" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'sysdiagrams' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="principal_id" />
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="image" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'tenk2012' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="tenk2012">
+          <Key>
+            <PropertyRef Name="address1" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="address1" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="address2" Type="nvarchar" MaxLength="50" />
+          <Property Name="address3" Type="nvarchar" MaxLength="50" />
+          <Property Name="aff" Type="nvarchar" MaxLength="50" />
+          <Property Name="age" Type="int" />
+          <Property Name="club" Type="nvarchar" MaxLength="50" />
+          <Property Name="county" Type="nvarchar" MaxLength="50" />
+          <Property Name="dec" Type="nvarchar" MaxLength="50" />
+          <Property Name="dob" Type="datetime" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="fee" Type="int" />
+          <Property Name="form" Type="nvarchar" MaxLength="50" />
+          <Property Name="grade" Type="nvarchar" MaxLength="50" />
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="mobile" Type="nvarchar" MaxLength="50" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="newsletter" Type="nvarchar" MaxLength="50" />
+          <Property Name="number" Type="int" />
+          <Property Name="number1" Type="int" />
+          <Property Name="paid" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="postcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="prn" Type="int" />
+          <Property Name="race" Type="nvarchar" MaxLength="50" />
+          <Property Name="receipt" Type="nvarchar" MaxLength="50" />
+          <Property Name="rn" Type="int" />
+          <Property Name="sent" Type="nvarchar" MaxLength="50" />
+          <Property Name="sex" Type="nvarchar" MaxLength="50" />
+          <Property Name="title" Type="nvarchar" MaxLength="50" />
+          <Property Name="udate" Type="datetime" />
+          <Property Name="gp" Type="nchar" MaxLength="10" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="message" Type="nchar" MaxLength="10" />
+          <Property Name="transaction_id" Type="nvarchar" MaxLength="30" />
+          <Property Name="rn2" Type="uniqueidentifier" />
+          <Property Name="ukaNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="IpnDetails" Type="ntext" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="IsAnonymous" />
+            <PropertyRef Name="LastActivityDate" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'UsersInRoles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HAC2Model" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HacEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Applications" EntityType="HAC2Model.Application" />
+          <EntitySet Name="Entries" EntityType="HAC2Model.Entry" />
+          <EntitySet Name="Events" EntityType="HAC2Model.Event" />
+          <EntitySet Name="funruns" EntityType="HAC2Model.funrun" />
+          <EntitySet Name="infoes" EntityType="HAC2Model.info" />
+          <EntitySet Name="info2" EntityType="HAC2Model.info2" />
+          <EntitySet Name="links" EntityType="HAC2Model.link" />
+          <EntitySet Name="Members" EntityType="HAC2Model.Member" />
+          <EntitySet Name="memberships" EntityType="HAC2Model.membership" />
+          <EntitySet Name="Memberships1" EntityType="HAC2Model.Membership1" />
+          <EntitySet Name="PIC_CATEGORIES" EntityType="HAC2Model.PIC_CATEGORIES" />
+          <EntitySet Name="profiles" EntityType="HAC2Model.profile" />
+          <EntitySet Name="Profiles1" EntityType="HAC2Model.Profile1" />
+          <EntitySet Name="results" EntityType="HAC2Model.result" />
+          <EntitySet Name="Roles" EntityType="HAC2Model.Role" />
+          <EntitySet Name="sysdiagrams" EntityType="HAC2Model.sysdiagram" />
+          <EntitySet Name="tenk2012" EntityType="HAC2Model.tenk2012" />
+          <EntitySet Name="Users" EntityType="HAC2Model.User" />
+          <EntitySet Name="UsersInRoles" EntityType="HAC2Model.UsersInRole" />
+        </EntityContainer>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="ApplicationName" />
+            <PropertyRef Name="ApplicationId" />
+          </Key>
+          <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="235" Unicode="true" FixedLength="false" />
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Entry">
+          <Key>
+            <PropertyRef Name="EntryId" />
+            <PropertyRef Name="Race" />
+            <PropertyRef Name="First_Name" />
+            <PropertyRef Name="Last_Name" />
+            <PropertyRef Name="Address_Line1" />
+            <PropertyRef Name="Address_Line2" />
+            <PropertyRef Name="CityTown" />
+            <PropertyRef Name="County" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="EntryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Race" Type="Boolean" Nullable="false" />
+          <Property Name="First_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Last_Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Address_Line1" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Address_Line2" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CityTown" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="County" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="subject" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Day" Type="Int32" />
+          <Property Name="Month" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="Location" Type="String" MaxLength="75" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="URL" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="show_news" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+          <Property Name="news1" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="news2" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="resultid" Type="Int32" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ImgS" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="ImgB" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="lname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="mid" Type="Int32" />
+          <Property Name="show_results" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="udate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="funrun">
+          <Key>
+            <PropertyRef Name="address1" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="address1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="address2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="address3" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="aff" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="age" Type="Int32" />
+          <Property Name="club" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="county" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="dec" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="dob" Type="DateTime" Precision="3" />
+          <Property Name="email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="fee" Type="Int32" />
+          <Property Name="form" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="grade" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="lname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="mobile" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="newsletter" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="number" Type="Int32" />
+          <Property Name="number1" Type="Int32" />
+          <Property Name="paid" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="postcode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="prn" Type="Int32" />
+          <Property Name="race" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="receipt" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="rn" Type="Int32" />
+          <Property Name="sent" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sex" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="title" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="udate" Type="DateTime" Precision="3" />
+          <Property Name="gp" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="message" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="transaction_id" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="rn2" Type="Guid" />
+          <Property Name="ukaNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IpnDetails" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="info">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="info1" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="udate" Type="DateTime" Precision="3" />
+          <Property Name="extra" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="info2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="info" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="udate" Type="DateTime" Precision="3" />
+          <Property Name="extra" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="link">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="category" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="url" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="title" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="220" Unicode="true" FixedLength="false" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="mid" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="lname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="udate" Type="DateTime" Precision="3" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="Member">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="ForeName" />
+            <PropertyRef Name="SurName" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ForeName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="SurName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="DOB" Type="DateTime" Precision="3" />
+          <Property Name="Sex" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="Access" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="OldId" Type="Int32" />
+          <Property Name="MembershipType" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="MembershipId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="membership">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="lname" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="sex" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="dob" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="type" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="mid" Type="Int32" />
+          <Property Name="access" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ex1" Type="Int32" />
+          <Property Name="udate" Type="DateTime" Precision="3" />
+          <Property Name="renew" Type="DateTime" Precision="3" />
+          <Property Name="email" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="address1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="address2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="town" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="postcode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Membership1">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="Password" />
+            <PropertyRef Name="PasswordFormat" />
+            <PropertyRef Name="PasswordSalt" />
+            <PropertyRef Name="IsApproved" />
+            <PropertyRef Name="IsLockedOut" />
+            <PropertyRef Name="CreateDate" />
+            <PropertyRef Name="LastLoginDate" />
+            <PropertyRef Name="LastPasswordChangedDate" />
+            <PropertyRef Name="LastLockoutDate" />
+            <PropertyRef Name="FailedPasswordAttemptCount" />
+            <PropertyRef Name="FailedPasswordAttemptWindowStart" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptCount" />
+            <PropertyRef Name="FailedPasswordAnswerAttemptWindowsStart" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordQuestion" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="PasswordAnswer" Type="String" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowsStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Comment" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PIC_CATEGORIES">
+          <Key>
+            <PropertyRef Name="CAT_ID" />
+          </Key>
+          <Property Name="CAT_ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CAT_NAME" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CAT_IMAGE" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CAT_DESC" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="profile">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="mid" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="membership" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="gender" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="lname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="dob" Type="DateTime" Precision="3" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="subject" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="udate" Type="DateTime" Precision="3" />
+          <Property Name="best" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="ambitions" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="latest" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="tip" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="position" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="standard" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="qualifications" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="specialisation" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="posts_held" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="current_athletes" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="athletes_achievements" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="age_group" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="pb" Type="Int32" />
+          <Property Name="result" Type="Int32" />
+          <Property Name="pb1" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="pb2" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="weeman" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="more" Type="Boolean" />
+          <Property Name="more2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Profile1">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="PropertyNames" />
+            <PropertyRef Name="PropertyValueStrings" />
+            <PropertyRef Name="PropertyValueBinary" />
+            <PropertyRef Name="LastUpdatedDate" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="PropertyNames" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="PropertyValueStrings" Type="String" Nullable="false" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="PropertyValueBinary" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="LastUpdatedDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="result">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EventId" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="mid" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="lname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="day" Type="DateTime" Precision="3" />
+          <Property Name="month" Type="DateTime" Precision="3" />
+          <Property Name="year" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Location" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="gender" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="agecat" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="subject" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="section" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="position" Type="Int32" />
+          <Property Name="result1" Type="Double" />
+          <Property Name="dp2" Type="Double" />
+          <Property Name="d1" Type="Int32" />
+          <Property Name="d2" Type="Int32" />
+          <Property Name="d3" Type="Int32" />
+          <Property Name="d4" Type="Int32" />
+          <Property Name="d5" Type="Int32" />
+          <Property Name="comment" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="url" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="url2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="udate" Type="DateTime" Precision="3" />
+          <Property Name="extra1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="extra2" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="extra3" Type="Int32" />
+          <Property Name="total" Type="Double" />
+          <Property Name="percent" Type="Double" />
+          <Property Name="points" Type="Int32" />
+          <Property Name="upsize_ts" Type="Binary" MaxLength="8" FixedLength="true" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="RoleName" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="name" />
+            <PropertyRef Name="principal_id" />
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tenk2012">
+          <Key>
+            <PropertyRef Name="address1" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="address1" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="address2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="address3" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="aff" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="age" Type="Int32" />
+          <Property Name="club" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="county" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="dec" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="dob" Type="DateTime" Precision="3" />
+          <Property Name="email" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="fee" Type="Int32" />
+          <Property Name="form" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="grade" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="lname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="mobile" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="newsletter" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="number" Type="Int32" />
+          <Property Name="number1" Type="Int32" />
+          <Property Name="paid" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="postcode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="prn" Type="Int32" />
+          <Property Name="race" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="receipt" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="rn" Type="Int32" />
+          <Property Name="sent" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sex" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="title" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="udate" Type="DateTime" Precision="3" />
+          <Property Name="gp" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="message" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="transaction_id" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="rn2" Type="Guid" />
+          <Property Name="ukaNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IpnDetails" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ApplicationId" />
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="IsAnonymous" />
+            <PropertyRef Name="LastActivityDate" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+          <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="UsersInRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HAC2ModelStoreContainer" CdmEntityContainer="HacEntities">
+          <EntitySetMapping Name="Applications">
+            <EntityTypeMapping TypeName="HAC2Model.Application">
+              <MappingFragment StoreEntitySet="Applications">
+                <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Entries">
+            <EntityTypeMapping TypeName="HAC2Model.Entry">
+              <MappingFragment StoreEntitySet="Entries">
+                <ScalarProperty Name="EntryId" ColumnName="EntryId" />
+                <ScalarProperty Name="Race" ColumnName="Race" />
+                <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+                <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+                <ScalarProperty Name="Address_Line1" ColumnName="Address_Line1" />
+                <ScalarProperty Name="Address_Line2" ColumnName="Address_Line2" />
+                <ScalarProperty Name="CityTown" ColumnName="CityTown" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="HAC2Model.Event">
+              <MappingFragment StoreEntitySet="Events">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="show_news" ColumnName="show_news" />
+                <ScalarProperty Name="news1" ColumnName="news1" />
+                <ScalarProperty Name="news2" ColumnName="news2" />
+                <ScalarProperty Name="resultid" ColumnName="resultid" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="ImgS" ColumnName="ImgS" />
+                <ScalarProperty Name="ImgB" ColumnName="ImgB" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="mid" ColumnName="mid" />
+                <ScalarProperty Name="show_results" ColumnName="show_results" />
+                <ScalarProperty Name="udate" ColumnName="udate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="funruns">
+            <EntityTypeMapping TypeName="HAC2Model.funrun">
+              <MappingFragment StoreEntitySet="funrun">
+                <ScalarProperty Name="address1" ColumnName="address1" />
+                <ScalarProperty Name="address2" ColumnName="address2" />
+                <ScalarProperty Name="address3" ColumnName="address3" />
+                <ScalarProperty Name="aff" ColumnName="aff" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="club" ColumnName="club" />
+                <ScalarProperty Name="county" ColumnName="county" />
+                <ScalarProperty Name="dec" ColumnName="dec" />
+                <ScalarProperty Name="dob" ColumnName="dob" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fee" ColumnName="fee" />
+                <ScalarProperty Name="form" ColumnName="form" />
+                <ScalarProperty Name="grade" ColumnName="grade" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="newsletter" ColumnName="newsletter" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="number1" ColumnName="number1" />
+                <ScalarProperty Name="paid" ColumnName="paid" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="prn" ColumnName="prn" />
+                <ScalarProperty Name="race" ColumnName="race" />
+                <ScalarProperty Name="receipt" ColumnName="receipt" />
+                <ScalarProperty Name="rn" ColumnName="rn" />
+                <ScalarProperty Name="sent" ColumnName="sent" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="udate" ColumnName="udate" />
+                <ScalarProperty Name="gp" ColumnName="gp" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="transaction_id" ColumnName="transaction_id" />
+                <ScalarProperty Name="rn2" ColumnName="rn2" />
+                <ScalarProperty Name="ukaNumber" ColumnName="ukaNumber" />
+                <ScalarProperty Name="IpnDetails" ColumnName="IpnDetails" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="infoes">
+            <EntityTypeMapping TypeName="HAC2Model.info">
+              <MappingFragment StoreEntitySet="info">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="info1" ColumnName="info" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="udate" ColumnName="udate" />
+                <ScalarProperty Name="extra" ColumnName="extra" />
+                <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="info2">
+            <EntityTypeMapping TypeName="HAC2Model.info2">
+              <MappingFragment StoreEntitySet="info2">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="info" ColumnName="info" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="udate" ColumnName="udate" />
+                <ScalarProperty Name="extra" ColumnName="extra" />
+                <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="links">
+            <EntityTypeMapping TypeName="HAC2Model.link">
+              <MappingFragment StoreEntitySet="links">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="image" ColumnName="image" />
+                <ScalarProperty Name="mid" ColumnName="mid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="udate" ColumnName="udate" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Members">
+            <EntityTypeMapping TypeName="HAC2Model.Member">
+              <MappingFragment StoreEntitySet="Members">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="ForeName" ColumnName="ForeName" />
+                <ScalarProperty Name="SurName" ColumnName="SurName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Access" ColumnName="Access" />
+                <ScalarProperty Name="OldId" ColumnName="OldId" />
+                <ScalarProperty Name="MembershipType" ColumnName="MembershipType" />
+                <ScalarProperty Name="MembershipId" ColumnName="MembershipId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="memberships">
+            <EntityTypeMapping TypeName="HAC2Model.membership">
+              <MappingFragment StoreEntitySet="membership">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="dob" ColumnName="dob" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="mid" ColumnName="mid" />
+                <ScalarProperty Name="access" ColumnName="access" />
+                <ScalarProperty Name="ex1" ColumnName="ex1" />
+                <ScalarProperty Name="udate" ColumnName="udate" />
+                <ScalarProperty Name="renew" ColumnName="renew" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address1" ColumnName="address1" />
+                <ScalarProperty Name="address2" ColumnName="address2" />
+                <ScalarProperty Name="town" ColumnName="town" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Memberships1">
+            <EntityTypeMapping TypeName="HAC2Model.Membership1">
+              <MappingFragment StoreEntitySet="Memberships">
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowsStart" ColumnName="FailedPasswordAnswerAttemptWindowsStart" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PIC_CATEGORIES">
+            <EntityTypeMapping TypeName="HAC2Model.PIC_CATEGORIES">
+              <MappingFragment StoreEntitySet="PIC_CATEGORIES">
+                <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+                <ScalarProperty Name="CAT_NAME" ColumnName="CAT_NAME" />
+                <ScalarProperty Name="CAT_IMAGE" ColumnName="CAT_IMAGE" />
+                <ScalarProperty Name="CAT_DESC" ColumnName="CAT_DESC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="profiles">
+            <EntityTypeMapping TypeName="HAC2Model.profile">
+              <MappingFragment StoreEntitySet="profile">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="mid" ColumnName="mid" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="membership" ColumnName="membership" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="dob" ColumnName="dob" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="udate" ColumnName="udate" />
+                <ScalarProperty Name="best" ColumnName="best" />
+                <ScalarProperty Name="ambitions" ColumnName="ambitions" />
+                <ScalarProperty Name="latest" ColumnName="latest" />
+                <ScalarProperty Name="tip" ColumnName="tip" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="standard" ColumnName="standard" />
+                <ScalarProperty Name="qualifications" ColumnName="qualifications" />
+                <ScalarProperty Name="specialisation" ColumnName="specialisation" />
+                <ScalarProperty Name="posts_held" ColumnName="posts_held" />
+                <ScalarProperty Name="current_athletes" ColumnName="current_athletes" />
+                <ScalarProperty Name="athletes_achievements" ColumnName="athletes_achievements" />
+                <ScalarProperty Name="age_group" ColumnName="age_group" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="pb" ColumnName="pb" />
+                <ScalarProperty Name="result" ColumnName="result" />
+                <ScalarProperty Name="pb1" ColumnName="pb1" />
+                <ScalarProperty Name="pb2" ColumnName="pb2" />
+                <ScalarProperty Name="weeman" ColumnName="weeman" />
+                <ScalarProperty Name="more" ColumnName="more" />
+                <ScalarProperty Name="more2" ColumnName="more2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profiles1">
+            <EntityTypeMapping TypeName="HAC2Model.Profile1">
+              <MappingFragment StoreEntitySet="Profiles">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="PropertyNames" ColumnName="PropertyNames" />
+                <ScalarProperty Name="PropertyValueStrings" ColumnName="PropertyValueStrings" />
+                <ScalarProperty Name="PropertyValueBinary" ColumnName="PropertyValueBinary" />
+                <ScalarProperty Name="LastUpdatedDate" ColumnName="LastUpdatedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="results">
+            <EntityTypeMapping TypeName="HAC2Model.result">
+              <MappingFragment StoreEntitySet="results">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="EventId" ColumnName="EventId" />
+                <ScalarProperty Name="mid" ColumnName="mid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="day" ColumnName="day" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="gender" ColumnName="gender" />
+                <ScalarProperty Name="agecat" ColumnName="agecat" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="section" ColumnName="section" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="result1" ColumnName="result" />
+                <ScalarProperty Name="dp2" ColumnName="dp2" />
+                <ScalarProperty Name="d1" ColumnName="d1" />
+                <ScalarProperty Name="d2" ColumnName="d2" />
+                <ScalarProperty Name="d3" ColumnName="d3" />
+                <ScalarProperty Name="d4" ColumnName="d4" />
+                <ScalarProperty Name="d5" ColumnName="d5" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="url2" ColumnName="url2" />
+                <ScalarProperty Name="udate" ColumnName="udate" />
+                <ScalarProperty Name="extra1" ColumnName="extra1" />
+                <ScalarProperty Name="extra2" ColumnName="extra2" />
+                <ScalarProperty Name="extra3" ColumnName="extra3" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="percent" ColumnName="percent" />
+                <ScalarProperty Name="points" ColumnName="points" />
+                <ScalarProperty Name="upsize_ts" ColumnName="upsize_ts" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="HAC2Model.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="HAC2Model.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tenk2012">
+            <EntityTypeMapping TypeName="HAC2Model.tenk2012">
+              <MappingFragment StoreEntitySet="tenk2012">
+                <ScalarProperty Name="address1" ColumnName="address1" />
+                <ScalarProperty Name="address2" ColumnName="address2" />
+                <ScalarProperty Name="address3" ColumnName="address3" />
+                <ScalarProperty Name="aff" ColumnName="aff" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="club" ColumnName="club" />
+                <ScalarProperty Name="county" ColumnName="county" />
+                <ScalarProperty Name="dec" ColumnName="dec" />
+                <ScalarProperty Name="dob" ColumnName="dob" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="fee" ColumnName="fee" />
+                <ScalarProperty Name="form" ColumnName="form" />
+                <ScalarProperty Name="grade" ColumnName="grade" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="newsletter" ColumnName="newsletter" />
+                <ScalarProperty Name="number" ColumnName="number" />
+                <ScalarProperty Name="number1" ColumnName="number1" />
+                <ScalarProperty Name="paid" ColumnName="paid" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="prn" ColumnName="prn" />
+                <ScalarProperty Name="race" ColumnName="race" />
+                <ScalarProperty Name="receipt" ColumnName="receipt" />
+                <ScalarProperty Name="rn" ColumnName="rn" />
+                <ScalarProperty Name="sent" ColumnName="sent" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="udate" ColumnName="udate" />
+                <ScalarProperty Name="gp" ColumnName="gp" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="transaction_id" ColumnName="transaction_id" />
+                <ScalarProperty Name="rn2" ColumnName="rn2" />
+                <ScalarProperty Name="ukaNumber" ColumnName="ukaNumber" />
+                <ScalarProperty Name="IpnDetails" ColumnName="IpnDetails" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="HAC2Model.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UsersInRoles">
+            <EntityTypeMapping TypeName="HAC2Model.UsersInRole">
+              <MappingFragment StoreEntitySet="UsersInRoles">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

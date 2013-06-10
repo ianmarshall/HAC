@@ -7,14 +7,14 @@
     <Name>HAC.Database</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{4c3f71ef-8baa-4adb-815e-f619769d6360}</ProjectGuid>
+    <ProjectGuid>{07a814e3-05c7-478c-89c3-f333560ae151}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
     <RootNamespace>HAC.Database</RootNamespace>
     <AssemblyName>HAC.Database</AssemblyName>
-    <ModelCollation>1033, CI</ModelCollation>
+    <ModelCollation>1033,CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
@@ -22,6 +22,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <SqlServerVerification>False</SqlServerVerification>
     <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Latin1_General_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -53,5 +55,33 @@
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\profile_1.sql" />
+    <Build Include="dbo\Tables\tenk2012_1.sql" />
+    <Build Include="dbo\Tables\funrun_1.sql" />
+    <Build Include="dbo\Tables\membership_1.sql" />
+    <Build Include="dbo\Tables\Events_1.sql" />
+    <Build Include="dbo\Tables\results_1.sql" />
+    <Build Include="dbo\Tables\info_1.sql" />
+    <Build Include="dbo\Tables\links_1.sql" />
+    <Build Include="dbo\Tables\info2_1.sql" />
+    <Build Include="dbo\Tables\PIC_CATEGORIES_1.sql" />
+    <Build Include="dbo\Tables\Entries_1.sql" />
+    <Build Include="dbo\Tables\Applications_1.sql" />
+    <Build Include="dbo\Tables\Memberships_1.sql" />
+    <Build Include="dbo\Tables\Profiles_1.sql" />
+    <Build Include="dbo\Tables\Roles_1.sql" />
+    <Build Include="dbo\Tables\Users_1.sql" />
+    <Build Include="dbo\Tables\UsersInRoles_1.sql" />
+    <Build Include="dbo\Tables\Members_1.sql" />
+    <Build Include="dbo\Functions\initcap_1.sql" />
+    <Build Include="dbo\Functions\udf_TitleCase_1.sql" />
+    <Build Include="dbo\Functions\ParseUKPostalCode_1.sql" />
+    <Build Include="dbo\Stored Procedures\InsertGenerator_1.sql" />
   </ItemGroup>
 </Project>
