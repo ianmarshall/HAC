@@ -28,7 +28,7 @@
     <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>0</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -43,10 +43,23 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MvcSiteMapProvider">
+      <HintPath>..\packages\MvcSiteMapProvider.3.3.6.0\lib\net40\MvcSiteMapProvider.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\lib\net40\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.4.3.6\lib\net40\System.Data.SqlServerCe.Entity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -112,16 +125,265 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Data\HAC2.sdf" />
+    <Content Include="Content\demo-images\alex_track.png" />
+    <Content Include="Content\demo-images\subs.jpg" />
+    <Content Include="Content\dropdown_one.css" />
+    <Content Include="Content\fullcalendar.css" />
+    <Content Include="Content\fullcalendar.print.css" />
+    <Content Include="Content\ie_style.css" />
+    <Content Include="Content\images\1page-img1.jpg" />
+    <Content Include="Content\images\1page-img2.jpg" />
+    <Content Include="Content\images\1page-img3.jpg" />
+    <Content Include="Content\images\1page-img4.jpg" />
+    <Content Include="Content\images\2page-img1.jpg" />
+    <Content Include="Content\images\2page-img2.jpg" />
+    <Content Include="Content\images\2page-img3.jpg" />
+    <Content Include="Content\images\2page-img4.jpg" />
+    <Content Include="Content\images\2page-img5.jpg" />
+    <Content Include="Content\images\2page-img6.jpg" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\images\announce_icon.jpg" />
+    <Content Include="Content\images\announce_icon_white.gif" />
+    <Content Include="Content\images\arrow1.gif" />
+    <Content Include="Content\images\arrow2.gif" />
+    <Content Include="Content\images\arrow3.gif" />
+    <Content Include="Content\images\arrow4.gif" />
+    <Content Include="Content\images\arrow5.gif" />
+    <Content Include="Content\images\banner1.jpg" />
+    <Content Include="Content\images\base.gif" />
+    <Content Include="Content\images\big-banner.jpg" />
+    <Content Include="Content\images\border-bot.gif" />
+    <Content Include="Content\images\border-bot4.gif" />
+    <Content Include="Content\images\border-left4.gif" />
+    <Content Include="Content\images\border-right4.gif" />
+    <Content Include="Content\images\box-bg.gif" />
+    <Content Include="Content\images\box1-bg.gif" />
+    <Content Include="Content\images\box2-bg.gif" />
+    <Content Include="Content\images\box3-bg.gif" />
+    <Content Include="Content\images\cd.gif" />
+    <Content Include="Content\images\child.gif" />
+    <Content Include="Content\images\classic-loader.gif" />
+    <Content Include="Content\images\classic-map.png" />
+    <Content Include="Content\images\climbing.jpg" />
+    <Content Include="Content\images\comment_bg.png" />
+    <Content Include="Content\images\content-bg.gif" />
+    <Content Include="Content\images\divider.gif" />
+    <Content Include="Content\images\empty.gif" />
+    <Content Include="Content\images\footer-bg.jpg" />
+    <Content Include="Content\images\globe.gif" />
+    <Content Include="Content\images\HAC_new_banner.gif" />
+    <Content Include="Content\images\header-bg.jpg" />
+    <Content Include="Content\images\header-box-bg.jpg" />
+    <Content Include="Content\images\header-box-left.jpg" />
+    <Content Include="Content\images\header-box-right.jpg" />
+    <Content Include="Content\images\ibonesazules.jpg" />
+    <Content Include="Content\images\imgfolder.gif" />
+    <Content Include="Content\images\input-text-bg.gif" />
+    <Content Include="Content\images\join.gif" />
+    <Content Include="Content\images\joinbottom.gif" />
+    <Content Include="Content\images\left-arrow.png" />
+    <Content Include="Content\images\left-bot-corner.gif" />
+    <Content Include="Content\images\left-bot-corner1.gif" />
+    <Content Include="Content\images\left-bot-corner2.gif" />
+    <Content Include="Content\images\left-bot-corner3.gif" />
+    <Content Include="Content\images\left-bot-corner4.gif" />
+    <Content Include="Content\images\left-bot-corner5.gif" />
+    <Content Include="Content\images\left-top-corner.gif" />
+    <Content Include="Content\images\left-top-corner1-1.gif" />
+    <Content Include="Content\images\left-top-corner1.gif" />
+    <Content Include="Content\images\left-top-corner2-1.gif" />
+    <Content Include="Content\images\left-top-corner2.gif" />
+    <Content Include="Content\images\left-top-corner4.gif" />
+    <Content Include="Content\images\line.gif" />
+    <Content Include="Content\images\link1-bg.gif" />
+    <Content Include="Content\images\link1-left.gif" />
+    <Content Include="Content\images\link1-right.gif" />
+    <Content Include="Content\images\list1-foot.gif" />
+    <Content Include="Content\images\list1-head.gif" />
+    <Content Include="Content\images\logo-box-bg.gif" />
+    <Content Include="Content\images\logo-box-left.gif" />
+    <Content Include="Content\images\logo-box-right.gif" />
+    <Content Include="Content\images\marker.gif" />
+    <Content Include="Content\images\minus.gif" />
+    <Content Include="Content\images\minusbottom.gif" />
+    <Content Include="Content\images\musicfolder.gif" />
+    <Content Include="Content\images\news-bg.gif" />
+    <Content Include="Content\images\next.gif" />
+    <Content Include="Content\images\nextArrow.png" />
+    <Content Include="Content\images\noimage.jpg" />
+    <Content Include="Content\images\nolines_minus.gif" />
+    <Content Include="Content\images\nolines_plus.gif" />
+    <Content Include="Content\images\page.gif" />
+    <Content Include="Content\images\plus.gif" />
+    <Content Include="Content\images\plusbottom.gif" />
+    <Content Include="Content\images\prev.gif" />
+    <Content Include="Content\images\prevArrow.png" />
+    <Content Include="Content\images\question.gif" />
+    <Content Include="Content\images\right-arrow.png" />
+    <Content Include="Content\images\right-bot-corner.gif" />
+    <Content Include="Content\images\right-bot-corner1.gif" />
+    <Content Include="Content\images\right-bot-corner2.gif" />
+    <Content Include="Content\images\right-bot-corner3.gif" />
+    <Content Include="Content\images\right-bot-corner4.gif" />
+    <Content Include="Content\images\right-bot-corner5.gif" />
+    <Content Include="Content\images\right-top-corner.gif" />
+    <Content Include="Content\images\right-top-corner1-1.gif" />
+    <Content Include="Content\images\right-top-corner1.gif" />
+    <Content Include="Content\images\right-top-corner2-1.gif" />
+    <Content Include="Content\images\right-top-corner2.gif" />
+    <Content Include="Content\images\right-top-corner4.gif" />
+    <Content Include="Content\images\rss.png" />
+    <Content Include="Content\images\run_icon.jpg" />
+    <Content Include="Content\images\SeniorTeam.jpg" />
+    <Content Include="Content\images\slide-box-left.gif" />
+    <Content Include="Content\images\slide-box-right.gif" />
+    <Content Include="Content\images\slide1.jpg" />
+    <Content Include="Content\images\slide2.jpg" />
+    <Content Include="Content\images\slide3.jpg" />
+    <Content Include="Content\images\slide4.jpg" />
+    <Content Include="Content\images\slide5.jpg" />
+    <Content Include="Content\images\slide6.jpg" />
+    <Content Include="Content\images\spacer.gif" />
+    <Content Include="Content\images\spinner.gif" />
+    <Content Include="Content\images\submit.gif" />
+    <Content Include="Content\images\tail-top.jpg" />
+    <Content Include="Content\images\titl-box-left.gif" />
+    <Content Include="Content\images\titl-box-right.gif" />
+    <Content Include="Content\images\title-box-bg1.gif" />
+    <Content Include="Content\images\title-box-bg2.gif" />
+    <Content Include="Content\images\title-box3-bg.gif" />
+    <Content Include="Content\images\title-box3-left.gif" />
+    <Content Include="Content\images\title-box3-right.gif" />
+    <Content Include="Content\images\title-box4-bg-02.gif" />
+    <Content Include="Content\images\title-box4-bg.gif" />
+    <Content Include="Content\images\title-box4-left.gif" />
+    <Content Include="Content\images\title-box4-right.gif" />
+    <Content Include="Content\images\trash.gif" />
+    <Content Include="Content\images\UnderConstruction1.png" />
+    <Content Include="Content\images\userexamples_small.jpg" />
+    <Content Include="Content\jHtmlArea\jHtmlArea.ColorPickerMenu.css" />
+    <Content Include="Content\jHtmlArea\jHtmlArea.css" />
+    <Content Include="Content\jHtmlArea\jHtmlArea.Editor.css" />
+    <Content Include="Content\jHtmlArea\jHtmlArea.png" />
+    <Content Include="Content\jHtmlArea\jHtmlArea_Toolbar_Group_BG.png" />
+    <Content Include="Content\jHtmlArea\jHtmlArea_Toolbar_Group__Btn_Select_BG.png" />
+    <Content Include="Content\jMenu.jquery.css" />
+    <Content Include="Content\jquery.thumbnailScroller.css" />
+    <Content Include="Content\layout.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\redactor\redactor.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\images\ui-bg_glass_55_fcf0ba_1x400.png" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\images\ui-bg_gloss-wave_100_ece8da_500x100.png" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\images\ui-bg_highlight-hard_100_f5f3e5_1x100.png" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\images\ui-bg_highlight-hard_100_fafaf4_1x100.png" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\images\ui-bg_highlight-hard_15_459e00_1x100.png" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\images\ui-bg_highlight-hard_95_cccccc_1x100.png" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\images\ui-bg_highlight-soft_25_67b021_1x100.png" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\images\ui-bg_highlight-soft_95_ffedad_1x100.png" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\images\ui-bg_inset-soft_15_2b2922_1x100.png" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\images\ui-icons_808080_256x240.png" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\images\ui-icons_847e71_256x240.png" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\images\ui-icons_8dc262_256x240.png" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\images\ui-icons_eeeeee_256x240.png" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\jquery-ui-1.9.2.custom.css" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\css\custom-theme\jquery-ui-1.9.2.custom.min.css" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\index.html" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\js\jquery-1.8.3.js" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\js\jquery-ui-1.9.2.custom.js" />
+    <Content Include="Content\themes\jquery-ui-1.9.2.custom\js\jquery-ui-1.9.2.custom.min.js" />
     <Content Include="Global.asax" />
+    <Content Include="Shared\DisplayTemplates\SiteMapNodeModel.ascx" />
+    <Content Include="Shared\DisplayTemplates\SiteMapNodeModelList.ascx" />
+    <Content Include="Shared\DisplayTemplates\SiteMapTitleHelperModel.ascx" />
+    <Content Include="Shared\DisplayTemplates\SubMenuHelperModel.ascx" />
+    <Content Include="Shared\index-1.html" />
+    <Content Include="Shared\index-2.html" />
+    <Content Include="Shared\index.html" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.ascx" />
+    <Content Include="Views\Shared\DisplayTemplates\SubMenuHelperModel.ascx" />
+    <Content Include="Views\Shared\index-1.html" />
+    <Content Include="Views\Shared\index-2.html" />
+    <Content Include="Views\Shared\index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -130,14 +392,92 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
+    <Content Include="Mvc.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Content\demo-images\subs.pdn" />
+    <None Include="MvcSiteMapSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Shared\Announcement1.cshtml" />
+    <Content Include="Shared\CategoryTree.cshtml" />
+    <Content Include="Shared\DisplayTemplates\Copy of MenuHelperModel.cshtml" />
+    <Content Include="Shared\DisplayTemplates\MenuHelperModel.cshtml" />
+    <Content Include="Shared\DisplayTemplates\SiteMapHelperModel.cshtml" />
+    <Content Include="Shared\DisplayTemplates\SiteMapNodeModel.cshtml" />
+    <Content Include="Shared\DisplayTemplates\SiteMapNodeModelList.cshtml" />
+    <Content Include="Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
+    <Content Include="Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
+    <Content Include="Shared\DisplayTemplates\SubMenuHelperModel.cshtml" />
+    <Content Include="Shared\EditorTemplates\Redactor.cshtml" />
+    <Content Include="Shared\Error.cshtml" />
+    <Content Include="Shared\FolderTree.cshtml" />
+    <Content Include="Shared\LatestAnnouncements.cshtml" />
+    <Content Include="Shared\LatestEvents %28Marshal%27s conflicted copy 2013-05-22%29.cshtml" />
+    <Content Include="Shared\LatestEvents.cshtml" />
+    <Content Include="Shared\NewsItems.cshtml" />
+    <Content Include="Shared\SignIn.cshtml" />
+    <Content Include="Shared\UnderConstruction.cshtml" />
+    <Content Include="Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Announcement1.cshtml" />
+    <Content Include="Views\Shared\CategoryTree.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Copy of MenuHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SubMenuHelperModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Redactor.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\FolderTree.cshtml" />
+    <Content Include="Views\Shared\LatestAnnouncements.cshtml" />
+    <Content Include="Views\Shared\LatestEvents %28Marshal%27s conflicted copy 2013-05-22%29.cshtml" />
+    <Content Include="Views\Shared\LatestEvents.cshtml" />
+    <Content Include="Views\Shared\NewsItems.cshtml" />
+    <Content Include="Views\Shared\SignIn.cshtml" />
+    <Content Include="Views\Shared\UnderConstruction.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceer40EN.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlcecompact40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\sqlceca40.dll" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\README_ENU.txt" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\msvcr90.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlcese40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceqp40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceme40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceer40EN.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlcecompact40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\sqlceca40.dll" />
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
+    <None Include="_bin_deployableAssemblies\x86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
+    <Folder Include="Content\DevCache\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HAC.Domain\HAC.Domain.csproj">
+      <Project>{2e5bb017-259f-4bbb-8ad7-61dd0247b358}</Project>
+      <Name>HAC.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\HAC1&amp;1.pubxml" />
+    <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -155,7 +495,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>54836</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:51193/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

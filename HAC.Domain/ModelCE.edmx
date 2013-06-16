@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HAC2CeModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="HAC2CeModelStoreContainer">
+          <EntitySet Name="Announcements" EntityType="HAC2CeModel.Store.Announcements" store:Type="Tables" store:Name="Announcements">
+            <DefiningQuery>SELECT 
+            [Announcements].[ID] AS [ID], 
+            [Announcements].[Title] AS [Title], 
+            [Announcements].[Description] AS [Description], 
+            [Announcements].[CreateDate] AS [CreateDate], 
+            [Announcements].[ExpiryDate] AS [ExpiryDate], 
+            [Announcements].[LastModified] AS [LastModified], 
+            [Announcements].[UserId] AS [UserId], 
+            [Announcements].[PhotoImageId] AS [PhotoImageId], 
+            [Announcements].[PhotoCategoryId] AS [PhotoCategoryId]
+            FROM [Announcements] AS [Announcements]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Events" EntityType="HAC2CeModel.Store.Events" store:Type="Tables" store:Name="Events">
+            <DefiningQuery>SELECT 
+            [Events].[ID] AS [ID], 
+            [Events].[Title] AS [Title], 
+            [Events].[subject] AS [subject], 
+            [Events].[Day] AS [Day], 
+            [Events].[Month] AS [Month], 
+            [Events].[Year] AS [Year], 
+            [Events].[Date] AS [Date], 
+            [Events].[EndDate] AS [EndDate], 
+            [Events].[Location] AS [Location], 
+            [Events].[Description] AS [Description], 
+            [Events].[URL] AS [URL], 
+            [Events].[show_news] AS [show_news], 
+            [Events].[news1] AS [news1], 
+            [Events].[news2] AS [news2], 
+            [Events].[resultid] AS [resultid], 
+            [Events].[photo] AS [photo], 
+            [Events].[ImgS] AS [ImgS], 
+            [Events].[ImgB] AS [ImgB], 
+            [Events].[name] AS [name], 
+            [Events].[lname] AS [lname], 
+            [Events].[mid] AS [mid], 
+            [Events].[show_results] AS [show_results], 
+            [Events].[udate] AS [udate]
+            FROM [Events] AS [Events]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'Announcements' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="Announcements">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="CreateDate" />
+            <PropertyRef Name="ExpiryDate" />
+            <PropertyRef Name="LastModified" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="ExpiryDate" Type="datetime" Nullable="false" />
+          <Property Name="LastModified" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="int" />
+          <Property Name="PhotoImageId" Type="int" />
+          <Property Name="PhotoCategoryId" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'Events' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+          <Property Name="subject" Type="nvarchar" MaxLength="50" />
+          <Property Name="Day" Type="int" />
+          <Property Name="Month" Type="nvarchar" MaxLength="50" />
+          <Property Name="Year" Type="int" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="Location" Type="nvarchar" MaxLength="75" />
+          <Property Name="Description" Type="ntext" />
+          <Property Name="URL" Type="nvarchar" MaxLength="150" />
+          <Property Name="show_news" Type="nvarchar" MaxLength="80" />
+          <Property Name="news1" Type="ntext" />
+          <Property Name="news2" Type="ntext" />
+          <Property Name="resultid" Type="int" />
+          <Property Name="photo" Type="image" />
+          <Property Name="ImgS" Type="nvarchar" MaxLength="150" />
+          <Property Name="ImgB" Type="nvarchar" MaxLength="150" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+          <Property Name="lname" Type="nvarchar" MaxLength="50" />
+          <Property Name="mid" Type="int" />
+          <Property Name="show_results" Type="nvarchar" MaxLength="50" />
+          <Property Name="udate" Type="datetime" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HAC2CeModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HAC2CeEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Events" EntityType="HAC2CeModel.Event" />
+          <EntitySet Name="Announcements" EntityType="HAC2CeModel.Announcement" />
+        </EntityContainer>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="subject" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Day" Type="Int32" />
+          <Property Name="Month" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="Location" Type="String" MaxLength="75" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="URL" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="show_news" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+          <Property Name="news1" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="news2" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="resultid" Type="Int32" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ImgS" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="ImgB" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="lname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="mid" Type="Int32" />
+          <Property Name="show_results" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="udate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Announcement">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="CreateDate" />
+            <PropertyRef Name="ExpiryDate" />
+            <PropertyRef Name="LastModified" />
+          </Key>
+          <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="ExpiryDate" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="LastModified" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="UserId" />
+          <Property Type="Int32" Name="PhotoImageId" />
+          <Property Type="Int32" Name="PhotoCategoryId" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HAC2CeModelStoreContainer" CdmEntityContainer="HAC2CeEntities">
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="HAC2CeModel.Event">
+              <MappingFragment StoreEntitySet="Events">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="Day" ColumnName="Day" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="show_news" ColumnName="show_news" />
+                <ScalarProperty Name="news1" ColumnName="news1" />
+                <ScalarProperty Name="news2" ColumnName="news2" />
+                <ScalarProperty Name="resultid" ColumnName="resultid" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="ImgS" ColumnName="ImgS" />
+                <ScalarProperty Name="ImgB" ColumnName="ImgB" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="mid" ColumnName="mid" />
+                <ScalarProperty Name="show_results" ColumnName="show_results" />
+                <ScalarProperty Name="udate" ColumnName="udate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Announcements">
+            <EntityTypeMapping TypeName="HAC2CeModel.Announcement">
+              <MappingFragment StoreEntitySet="Announcements">
+                <ScalarProperty Name="PhotoCategoryId" ColumnName="PhotoCategoryId" />
+                <ScalarProperty Name="PhotoImageId" ColumnName="PhotoImageId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
