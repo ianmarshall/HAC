@@ -42,7 +42,6 @@ ipch/
 *.aps
 *.ncb
 *.opensdf
-*.sdf
 
 # Visual Studio profiler
 *.psess
@@ -78,8 +77,6 @@ publish
 # Publish Web Output
 *.Publish.xml
 
-# NuGet Packages Directory
-packages
 
 # Windows Azure Build Output
 csx
