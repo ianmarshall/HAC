@@ -155,13 +155,13 @@
 
                         <div id="tS2" class="jThumbnailScroller">
                             <div class="jTscrollerContainer">
-                                @* <div class="jTscroller" data-bind="template: {name:'thumbnailsTemplate', foreach: thumbnails, afterRender: applyThumbnailScroller } "></div>*@
+                                <div class="jTscroller" data-bind="template: {name:'thumbnailsTemplate', foreach: thumbnails, afterRender: applyThumbnailScroller } "></div>
                                 <div class="jTscroller">
-                                  @*  @foreach (pic_images image in Model.latestPhotos)
+                                   @foreach (PIC_IMAGES image in Model.latestPhotos)
                                     {
                                         <a href="Image?id=@image.PIC_ID">
                                             <img src="@ViewBag.FullUrl/ThumbnailView/120/120?ImageVPath=@image.PIC_IMAGE"/></a>
-                                    }*@
+                                    }
                                 </div>
                             </div>
                             <a href="#" class="jTscrollerPrevButton"></a>
@@ -175,9 +175,9 @@
                             <div class="col-1">
                                 <div class="ind">
 
-                                   @* @{
+                                    @{
                                         RenderPartialExtensions.RenderPartial(Html, "NewsItems", Model.LatestNews);
-                                    }*@
+                                    }
 
                                 </div>
                             </div>
@@ -232,10 +232,10 @@ Congratulations to everyone!
                         <div class="indent2">
                             <!--latest events pv-->
 
-                         @*   @{
-                                RenderPartialExtensions.RenderPartial(Html, "LatestEvents", Model.latestEvents);
+                            @{
+                                RenderPartialExtensions.RenderPartial(Html, "LatestEvents", Model.LatestEvents);
                             }
-                            ;*@
+                            ;
 
                             <!-- title-box3 begin -->
                             <div class="title-box3">

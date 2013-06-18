@@ -4,9 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="730dcde39ce349e3872347563c444428" Name="Diagram1">
+      <Diagram DiagramId="730dcde39ce349e3872347563c444428" Name="Diagram1" ZoomLevel="63">
         <EntityTypeShape EntityType="HAC2CeModel.Event" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HAC2CeModel.Announcement" Width="1.5" PointX="8.3676491623593723" PointY="22.72208787068822" />
+        <EntityTypeShape EntityType="HAC2CeModel.PIC_CATEGORIES" Width="1.5" PointX="5.1041637664214541" PointY="13.84593818236419" />
+        <EntityTypeShape EntityType="HAC2CeModel.PIC_IMAGES" Width="1.5" PointX="9.48789865779127" PointY="13.933410069874213" />
+        <EntityTypeShape EntityType="HAC2CeModel.Announcement" Width="1.5" PointX="2.5968583927475186" PointY="3.7326143252349526" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

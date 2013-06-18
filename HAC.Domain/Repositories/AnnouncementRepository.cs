@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using HAC.Domain;
 
 namespace HAC.Domain.Repositories
 {
-   public class AnnouncementRepository
+    public class AnnouncementRepository
     {
         private HAC2CeEntities context = new HAC2CeEntities();
+
 
         public void Save(Announcement announcement)
         {
@@ -29,7 +26,9 @@ namespace HAC.Domain.Repositories
 
         public IQueryable<Announcement> GetLatestAnnouncements(int count)
         {
-            return context.Announcements.Where(a => a.ExpiryDate >= DateTime.Now && !string.IsNullOrEmpty(a.Description)).OrderBy(e => e.ExpiryDate).Take(count);
+
+
+            return context.Announcements.Where(a => a.ExpiryDate >= DateTime.Now && a.Description != "").OrderBy(e => e.ExpiryDate).Take(count);
 
             //return context.Announcements;
         }

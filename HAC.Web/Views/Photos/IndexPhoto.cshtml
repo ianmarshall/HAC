@@ -1,0 +1,62 @@
+﻿@using HAC.Domain
+@model HAC.Models.PhotosModel
+
+<div id="page2">
+    <div id="content">
+
+        <div class="indent">
+     @*       && Roles.IsUserInRole("Admin")*@
+           
+    
+            <div class="row-1">
+                <table border="0" cellspacing="2" cellpadding="2" id="photoCategories">
+                    <tr>
+                        <td align="left" valign="top">There are @Model.PicCount pictures in @Model.Categorieses.Count() categories</td>
+                    </tr>
+                    <tr>
+                        <td align="left" valign="top">
+                            <table>
+
+                                @{
+                                    int loopCount = 0;
+                                    int loopMax = Model.Categorieses.Count;
+                                    int endrw = 0;
+                                    const int numberColumns = 4;
+                                    int numrows = -1;
+
+                                    while (numrows != 0 && loopCount < loopMax)
+                                    {
+                                        int startrw = endrw + 1;
+                                        endrw = endrw + numberColumns;
+
+                                        <tr>
+
+                                            @while (startrw <= endrw && loopCount < loopMax)
+                                            {
+                                                {
+                                                    Html.RenderPartial("CategoryTemplate", Model.Categorieses[loopCount]);
+                                                }
+                                                startrw++;
+                                                loopCount++;
+                                            }
+
+                                        </tr>
+                                        numrows--;
+                                    }
+                                }
+
+                            </table>
+                        </td>
+                    </tr>
+                    <tr class="generalText">
+                        <td align="center" valign="middle"><a href="default.asp">GALLERY</a> | <a href="add.asp">ADD 
+                                                                                                   A PICTURE</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

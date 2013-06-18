@@ -6,60 +6,38 @@
     <edmx:StorageModels>
     <Schema Namespace="HAC2CeModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="HAC2CeModelStoreContainer">
-          <EntitySet Name="Announcements" EntityType="HAC2CeModel.Store.Announcements" store:Type="Tables" store:Name="Announcements">
+          <EntitySet Name="Announcements" EntityType="HAC2CeModel.Store.Announcements" store:Type="Tables" />
+          <EntitySet Name="Events" EntityType="HAC2CeModel.Store.Events" store:Type="Tables" />
+          <EntitySet Name="PIC_CATEGORIES" EntityType="HAC2CeModel.Store.PIC_CATEGORIES" store:Type="Tables" store:Name="PIC_CATEGORIES">
             <DefiningQuery>SELECT 
-            [Announcements].[ID] AS [ID], 
-            [Announcements].[Title] AS [Title], 
-            [Announcements].[Description] AS [Description], 
-            [Announcements].[CreateDate] AS [CreateDate], 
-            [Announcements].[ExpiryDate] AS [ExpiryDate], 
-            [Announcements].[LastModified] AS [LastModified], 
-            [Announcements].[UserId] AS [UserId], 
-            [Announcements].[PhotoImageId] AS [PhotoImageId], 
-            [Announcements].[PhotoCategoryId] AS [PhotoCategoryId]
-            FROM [Announcements] AS [Announcements]</DefiningQuery>
+            [PIC_CATEGORIES].[CAT_ID] AS [CAT_ID], 
+            [PIC_CATEGORIES].[CAT_NAME] AS [CAT_NAME], 
+            [PIC_CATEGORIES].[CAT_IMAGE] AS [CAT_IMAGE], 
+            [PIC_CATEGORIES].[CAT_DESC] AS [CAT_DESC]
+            FROM [PIC_CATEGORIES] AS [PIC_CATEGORIES]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="Events" EntityType="HAC2CeModel.Store.Events" store:Type="Tables" store:Name="Events">
+          <EntitySet Name="PIC_IMAGES" EntityType="HAC2CeModel.Store.PIC_IMAGES" store:Type="Tables" store:Name="PIC_IMAGES">
             <DefiningQuery>SELECT 
-            [Events].[ID] AS [ID], 
-            [Events].[Title] AS [Title], 
-            [Events].[subject] AS [subject], 
-            [Events].[Day] AS [Day], 
-            [Events].[Month] AS [Month], 
-            [Events].[Year] AS [Year], 
-            [Events].[Date] AS [Date], 
-            [Events].[EndDate] AS [EndDate], 
-            [Events].[Location] AS [Location], 
-            [Events].[Description] AS [Description], 
-            [Events].[URL] AS [URL], 
-            [Events].[show_news] AS [show_news], 
-            [Events].[news1] AS [news1], 
-            [Events].[news2] AS [news2], 
-            [Events].[resultid] AS [resultid], 
-            [Events].[photo] AS [photo], 
-            [Events].[ImgS] AS [ImgS], 
-            [Events].[ImgB] AS [ImgB], 
-            [Events].[name] AS [name], 
-            [Events].[lname] AS [lname], 
-            [Events].[mid] AS [mid], 
-            [Events].[show_results] AS [show_results], 
-            [Events].[udate] AS [udate]
-            FROM [Events] AS [Events]</DefiningQuery>
+            [PIC_IMAGES].[PIC_ID] AS [PIC_ID], 
+            [PIC_IMAGES].[PIC_CAT] AS [PIC_CAT], 
+            [PIC_IMAGES].[PIC_NAME] AS [PIC_NAME], 
+            [PIC_IMAGES].[PIC_IMAGE] AS [PIC_IMAGE], 
+            [PIC_IMAGES].[PIC_HEIGHT] AS [PIC_HEIGHT], 
+            [PIC_IMAGES].[PIC_WIDTH] AS [PIC_WIDTH], 
+            [PIC_IMAGES].[PIC_VIEW] AS [PIC_VIEW], 
+            [PIC_IMAGES].[PIC_DATED] AS [PIC_DATED], 
+            [PIC_IMAGES].[PIC_APPROVED] AS [PIC_APPROVED], 
+            [PIC_IMAGES].[PIC_DESC] AS [PIC_DESC]
+            FROM [PIC_IMAGES] AS [PIC_IMAGES]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-        <!--Errors Found During Generation:
-            warning 6002: The table/view 'Announcements' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-            -->
         <EntityType Name="Announcements">
           <Key>
             <PropertyRef Name="ID" />
-            <PropertyRef Name="CreateDate" />
-            <PropertyRef Name="ExpiryDate" />
-            <PropertyRef Name="LastModified" />
           </Key>
           <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="nvarchar" MaxLength="100" />
-          <Property Name="Description" Type="nvarchar" />
+          <Property Name="Description" Type="ntext" />
           <Property Name="CreateDate" Type="datetime" Nullable="false" />
           <Property Name="ExpiryDate" Type="datetime" Nullable="false" />
           <Property Name="LastModified" Type="datetime" Nullable="false" />
@@ -67,9 +45,6 @@
           <Property Name="PhotoImageId" Type="int" />
           <Property Name="PhotoCategoryId" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-            warning 6002: The table/view 'Events' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-            -->
         <EntityType Name="Events">
           <Key>
             <PropertyRef Name="ID" />
@@ -83,7 +58,7 @@
           <Property Name="Date" Type="datetime" />
           <Property Name="EndDate" Type="datetime" />
           <Property Name="Location" Type="nvarchar" MaxLength="75" />
-          <Property Name="Description" Type="ntext" />
+          <Property Name="Description" Type="nvarchar" />
           <Property Name="URL" Type="nvarchar" MaxLength="150" />
           <Property Name="show_news" Type="nvarchar" MaxLength="80" />
           <Property Name="news1" Type="ntext" />
@@ -98,12 +73,44 @@
           <Property Name="show_results" Type="nvarchar" MaxLength="50" />
           <Property Name="udate" Type="datetime" />
         </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'PIC_CATEGORIES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="PIC_CATEGORIES">
+          <Key>
+            <PropertyRef Name="CAT_ID" />
+          </Key>
+          <Property Name="CAT_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CAT_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="CAT_IMAGE" Type="nvarchar" MaxLength="50" />
+          <Property Name="CAT_DESC" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <!--Errors Found During Generation:
+            warning 6002: The table/view 'PIC_IMAGES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+            -->
+        <EntityType Name="PIC_IMAGES">
+          <Key>
+            <PropertyRef Name="PIC_ID" />
+          </Key>
+          <Property Name="PIC_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PIC_CAT" Type="int" />
+          <Property Name="PIC_NAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="PIC_IMAGE" Type="nvarchar" MaxLength="50" />
+          <Property Name="PIC_HEIGHT" Type="nvarchar" MaxLength="10" />
+          <Property Name="PIC_WIDTH" Type="nvarchar" MaxLength="10" />
+          <Property Name="PIC_VIEW" Type="int" />
+          <Property Name="PIC_DATED" Type="datetime" />
+          <Property Name="PIC_APPROVED" Type="int" />
+          <Property Name="PIC_DESC" Type="nvarchar" MaxLength="255" />
+        </EntityType>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="HAC2CeModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="HAC2CeEntities" p1:LazyLoadingEnabled="true">
           <EntitySet Name="Events" EntityType="HAC2CeModel.Event" />
+          <EntitySet Name="PIC_CATEGORIES" EntityType="HAC2CeModel.PIC_CATEGORIES" />
+          <EntitySet Name="PIC_IMAGES" EntityType="HAC2CeModel.PIC_IMAGES" />
           <EntitySet Name="Announcements" EntityType="HAC2CeModel.Announcement" />
         </EntityContainer>
         <EntityType Name="Event">
@@ -119,7 +126,7 @@
           <Property Name="Date" Type="DateTime" Precision="3" />
           <Property Name="EndDate" Type="DateTime" Precision="3" />
           <Property Name="Location" Type="String" MaxLength="75" Unicode="true" FixedLength="false" />
-          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
           <Property Name="URL" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
           <Property Name="show_news" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
           <Property Name="news1" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
@@ -134,16 +141,38 @@
           <Property Name="show_results" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="udate" Type="DateTime" Precision="3" />
         </EntityType>
+        <EntityType Name="PIC_CATEGORIES">
+          <Key>
+            <PropertyRef Name="CAT_ID" />
+          </Key>
+          <Property Type="Int32" Name="CAT_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CAT_NAME" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CAT_IMAGE" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CAT_DESC" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PIC_IMAGES">
+          <Key>
+            <PropertyRef Name="PIC_ID" />
+          </Key>
+          <Property Type="Int32" Name="PIC_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="PIC_CAT" />
+          <Property Type="String" Name="PIC_NAME" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PIC_IMAGE" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PIC_HEIGHT" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PIC_WIDTH" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="PIC_VIEW" />
+          <Property Type="DateTime" Name="PIC_DATED" Precision="3" />
+          <Property Type="Int32" Name="PIC_APPROVED" />
+          <Property Type="String" Name="PIC_DESC" MaxLength="255" FixedLength="false" Unicode="true" />
+          <!--<Property Type="Int32" Name="PIC_CATEGORIESCAT_ID" Nullable="false" />-->
+        </EntityType>
         <EntityType Name="Announcement">
           <Key>
             <PropertyRef Name="ID" />
-            <PropertyRef Name="CreateDate" />
-            <PropertyRef Name="ExpiryDate" />
-            <PropertyRef Name="LastModified" />
           </Key>
           <Property Type="Int32" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Title" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="Description" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="CreateDate" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="ExpiryDate" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="LastModified" Nullable="false" Precision="3" />
@@ -183,6 +212,32 @@
                 <ScalarProperty Name="mid" ColumnName="mid" />
                 <ScalarProperty Name="show_results" ColumnName="show_results" />
                 <ScalarProperty Name="udate" ColumnName="udate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PIC_CATEGORIES">
+            <EntityTypeMapping TypeName="HAC2CeModel.PIC_CATEGORIES">
+              <MappingFragment StoreEntitySet="PIC_CATEGORIES">
+                <ScalarProperty Name="CAT_DESC" ColumnName="CAT_DESC" />
+                <ScalarProperty Name="CAT_IMAGE" ColumnName="CAT_IMAGE" />
+                <ScalarProperty Name="CAT_NAME" ColumnName="CAT_NAME" />
+                <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PIC_IMAGES">
+            <EntityTypeMapping TypeName="HAC2CeModel.PIC_IMAGES">
+              <MappingFragment StoreEntitySet="PIC_IMAGES">
+                <ScalarProperty Name="PIC_DESC" ColumnName="PIC_DESC" />
+                <ScalarProperty Name="PIC_APPROVED" ColumnName="PIC_APPROVED" />
+                <ScalarProperty Name="PIC_DATED" ColumnName="PIC_DATED" />
+                <ScalarProperty Name="PIC_VIEW" ColumnName="PIC_VIEW" />
+                <ScalarProperty Name="PIC_WIDTH" ColumnName="PIC_WIDTH" />
+                <ScalarProperty Name="PIC_HEIGHT" ColumnName="PIC_HEIGHT" />
+                <ScalarProperty Name="PIC_IMAGE" ColumnName="PIC_IMAGE" />
+                <ScalarProperty Name="PIC_NAME" ColumnName="PIC_NAME" />
+                <ScalarProperty Name="PIC_CAT" ColumnName="PIC_CAT" />
+                <ScalarProperty Name="PIC_ID" ColumnName="PIC_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

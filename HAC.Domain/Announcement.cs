@@ -19,6 +19,13 @@ namespace HAC.Domain
         public int ID { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public System.DateTime CreateDate { get; set; }
+        public System.DateTime ExpiryDate { get; set; }
+        public System.DateTime LastModified { get; set; }
+        public Nullable<int> UserId { get; set; }
+        public Nullable<int> PhotoImageId { get; set; }
+        public Nullable<int> PhotoCategoryId { get; set; }
+
         public string DescriptionNoHTML
         {
             get { return TextTools.StripHtmlTagByCharArray(Description); }
@@ -28,12 +35,5 @@ namespace HAC.Domain
         {
             get { return DescriptionNoHTML.Substring(0, DescriptionNoHTML.Length > 150 ? 150 : DescriptionNoHTML.Length); }
         }
-
-        public System.DateTime CreateDate { get; set; }
-        public System.DateTime ExpiryDate { get; set; }
-        public System.DateTime LastModified { get; set; }
-        public Nullable<int> UserId { get; set; }
-        public Nullable<int> PhotoImageId { get; set; }
-        public Nullable<int> PhotoCategoryId { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using HAC.Domain;
 
 namespace HAC.Web.Models
 {
@@ -13,7 +14,7 @@ namespace HAC.Web.Models
         public List<Domain.Event> LatestEvents { get; set; }
         public List<Domain.Event> LatestNews { get; set; }
         //public Member Member { get; set; }
-        //public List<pic_images> latestPhotos { get; set; }
+        public List<PIC_IMAGES> latestPhotos { get; set; }
 
 
 

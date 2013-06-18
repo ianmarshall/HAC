@@ -39,7 +39,7 @@ namespace HAC.Domain.Repositories
 
         public IQueryable<Event> GetLatestNews(int count)
         {
-            return context.Events.Where(e => e.Date <= DateTime.Now && e.news1.Length > 1).OrderByDescending(e => e.Date).Take(count);
+            return context.Events.Where(e => e.Date <= DateTime.Now && e.news1 != "").OrderByDescending(e => e.Date).Take(count);
         }
 
         public Event GetNewsEvent(int id)

@@ -7,11 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using HAC.Domain.Tools;
+
 namespace HAC.Domain
 {
     using System;
-    using System.Collections.Generic;
-    
+
     public partial class Event
     {
         public int ID { get; set; }
@@ -37,5 +38,22 @@ namespace HAC.Domain
         public Nullable<int> mid { get; set; }
         public string show_results { get; set; }
         public Nullable<System.DateTime> udate { get; set; }
+
+        public string DescriptionShort
+        {
+            get { return TextTools.StripHtmlTagByCharArray(Description); }
+        }
+
+
+        public string newsNoHTML
+        {
+            get { return TextTools.StripHtmlTagByCharArray(news1); }
+        }
+
+        public string NewsShort
+        {
+            get { return newsNoHTML.Substring(0, newsNoHTML.Length > 150 ? 150 : newsNoHTML.Length); }
+        }
+
     }
 }

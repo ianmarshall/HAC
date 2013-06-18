@@ -26,6 +26,8 @@ namespace HAC.Domain
         }
     
         public DbSet<Event> Events { get; set; }
+        public DbSet<PIC_CATEGORIES> PIC_CATEGORIES { get; set; }
+        public DbSet<PIC_IMAGES> PIC_IMAGES { get; set; }
         public DbSet<Announcement> Announcements { get; set; }
     }
 }
